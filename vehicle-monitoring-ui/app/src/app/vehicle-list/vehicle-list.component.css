@@ -1,0 +1,91 @@
+.vehicle-list {
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 1200px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed;
+  font-size: 14px;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+  width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+td:hover {
+  white-space: normal;
+  word-wrap: break-word;
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+tr {
+  height: 40px;
+}
+
+.filter-container input {
+  padding: 8px;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.truck-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.refresh-timer {
+  font-size: 14px;
+  color: #666;
+  margin-left: auto;
+  font-weight: normal;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ddd;
+  width: 20%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.connected {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.disconnected {
+  color: #e74c3c;
+  font-weight: bold;
+}

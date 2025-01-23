@@ -1,0 +1,48 @@
+<div class="vehicle-list">
+  <h2>
+    <svg class="truck-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+      <path fill="#041E42" d="M240-160q-33 0-56.5-23.5T160-240v-480q0-33 23.5-56.5T240-800h320q33 0 56.5 23.5T640-720v120h80l120 160v200q0 33-23.5 56.5T760-160h-40q0-50-35-85t-85-35q-50 0-85 35t-35 85H400q0-50-35-85t-85-35q-50 0-85 35t-35 85h-40Z"/>
+      <path fill="#DC1928" d="M240-240h31q17-35 50-57.5t79-22.5q46 0 79 22.5t50 57.5h31q17-35 50-57.5t79-22.5q46 0 79 22.5t50 57.5h32v-200h-160v-280H240v480Zm400-280h144l-104-140h-40v140Z"/>
+      <circle fill="#000000" cx="280" cy="-180" r="85"/>
+      <circle fill="#000000" cx="600" cy="-180" r="85"/>
+      <circle fill="#333333" cx="280" cy="-180" r="35"/>
+      <circle fill="#333333" cx="600" cy="-180" r="35"/>
+    </svg>
+    Vehicle List
+    <span class="refresh-timer">Next refresh in: {{nextRefreshIn}}s</span>
+  </h2>
+
+  <div class="filter-container">
+    <input 
+      type="text" 
+      [(ngModel)]="filterText" 
+      (ngModelChange)="onFilterChange()"
+      placeholder="Filter by customer name, address, or vehicle details"
+      class="filter-input">
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Registration Number</th>
+        <th>Vehicle ID</th>
+        <th>Customer Name</th>
+        <th>Address</th>
+        <th>Status</th>
+        <th>Last Ping</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehicle of filteredVehicles">
+        <td>{{vehicle.regNumber}}</td>
+        <td>{{vehicle.identificationNumber}}</td>
+        <td>{{vehicle.customer.name}}</td>
+        <td>{{vehicle.customer.address}}</td>
+        <td [ngClass]="{'connected': vehicle.isConnected, 'disconnected': !vehicle.isConnected}">
+          {{vehicle.isConnected ? 'Connected' : 'Disconnected'}}
+        </td>
+        <td>{{vehicle.lastPing ? (vehicle.lastPing | date:'medium') : 'No ping received'}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
