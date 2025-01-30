@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleMonitoring.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleMonitoring.DataStore", "VehicleMonitoring.DataStore\VehicleMonitoring.DataStore.csproj", "{C4BC390B-4A72-4F0F-B208-B38D29D31F79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleMonitoring.API.Tests", "VehicleMonitoring.API.Tests\VehicleMonitoring.API.Tests.csproj", "{4FE2656A-50E3-4E40-97D5-CEFC1491B0BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VehicleMonitoring.IntegrationTests", "VehicleMonitoring.IntegrationTests\VehicleMonitoring.IntegrationTests.csproj", "{4FE2656A-50E3-4E40-97D5-CEFC1491B0BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -7,7 +7,7 @@ using VehicleMonitoring.API.Features.Common.ApiModels;
 using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.cs;
 using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.Queries;
 
-namespace VehicleMonitoring.API.Tests
+namespace VehicleMonitoring.IntegrationTests
 {
     public class Tests(App app) : TestBase<App>
     {
@@ -20,9 +20,12 @@ namespace VehicleMonitoring.API.Tests
 
             rsp.StatusCode.ShouldBe(HttpStatusCode.OK);
             res.ShouldNotBeNull();
-            res.Count.ShouldBe(1);
-            res.GetType().ShouldBe(typeof(List<Vehicle>));
-            res.First().RegNumber.ShouldBe("TEST123");
+            res.Count.ShouldBe(2);
+
+            var regNumbers = res.Select(v => v.RegNumber).ToList();
+            regNumbers.ShouldContain("ABC 123");
+            regNumbers.ShouldContain("EYD 983");
+
             res.First().Customer?.Id.ShouldBe(1);
         }
 

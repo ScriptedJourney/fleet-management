@@ -2,10 +2,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using FastEndpoints.Testing;
 using Microsoft.EntityFrameworkCore;
+using VehicleMonitoring.API;
 using VehicleMonitoring.DataStore.Data;
 using VehicleMonitoring.DataStore.Models;
 
-namespace VehicleMonitoring.API.Tests
+namespace VehicleMonitoring.IntegrationTests
 {
     public class App : AppFixture<Program>
     {
@@ -41,12 +42,13 @@ namespace VehicleMonitoring.API.Tests
             var customer = new Customer
             {
                 Id = 1,
-                Name = "Test Customer",
-                Address = "Test Address",
+                Name = "Olof Carlsson",
+                Address = "Some address 90210",
                 Vehicles = new List<Vehicle>
-            {
-                new Vehicle { Vin = "Test VIN", RegistrationNumber = "TEST123", LastPing = DateTime.UtcNow }
-            }
+                {
+                    new() { Vin = "ABCDEF12345", RegistrationNumber = "ABC 123", LastPing = DateTime.UtcNow },
+                    new() { Vin = "IOIEPC89182", RegistrationNumber = "EYD 983", LastPing = DateTime.UtcNow }
+                }
             };
 
             context.Customers.Add(customer);
