@@ -9,7 +9,7 @@ using FastEndpoints.Swagger;
 
 namespace VehicleMonitoring.API;
 
-public partial class Program
+public class Program
 {
     public static void Main(string[] args)
     {
@@ -32,12 +32,6 @@ public partial class Program
         builder.Services.AddScoped<IVehicleRepository, VehicleRepository>();
         builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
-        var jsonOptions = new JsonSerializerOptions
-        {
-            ReferenceHandler = ReferenceHandler.IgnoreCycles,
-            PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-        };
-
         if (builder.Environment.EnvironmentName != "Testing")
         {
             builder.Services.AddDbContextPool<VehicleMonitoringContext>(options =>
@@ -49,7 +43,7 @@ public partial class Program
         builder.Services.AddCors(options =>
         {
             options.AddPolicy("AllowAngular",
-                builder => builder
+                policyBuilder => policyBuilder
                     .AllowAnyOrigin()
                     .AllowAnyMethod()
                     .AllowAnyHeader());
@@ -60,7 +54,6 @@ public partial class Program
         var app = builder.Build();
 
         app.UseHttpsRedirection();
-        app.UseCors("AllowAngular");
 
         app.UseFastEndpoints(c => 
         {

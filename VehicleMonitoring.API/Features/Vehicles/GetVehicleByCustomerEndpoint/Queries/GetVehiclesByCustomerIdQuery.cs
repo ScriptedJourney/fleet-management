@@ -3,7 +3,7 @@ using VehicleMonitoring.API.Features.Common.ApiModels;
 using VehicleMonitoring.API.Features.Common.Mapping;
 using VehicleMonitoring.DataStore.Interfaces;
 
-namespace VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.cs.Queries
+namespace VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.Queries
 {
     public abstract record VehicleResult
     {
@@ -31,7 +31,9 @@ namespace VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.c
 
                 var enumerable = vehicles as DataStore.Models.Vehicle[] ?? vehicles.ToArray();
                 if (enumerable.Length == 0)
+                {
                     return new VehicleResult.NotFound();
+                }
 
                 var mappedCustomer = customer?.ToApiModel();
                 var mappedVehicles = enumerable

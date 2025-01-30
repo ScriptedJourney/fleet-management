@@ -4,9 +4,8 @@ using System.Net;
 using Xunit;
 using Shouldly;
 using VehicleMonitoring.API.Features.Common.ApiModels;
-using VehicleMonitoring.API.Features.Vehicles;
 using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.cs;
-using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.cs.Queries;
+using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.Queries;
 
 namespace VehicleMonitoring.API.Tests
 {

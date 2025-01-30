@@ -1,7 +1,7 @@
 using FastEndpoints;
 using MediatR;
 using VehicleMonitoring.API.Features.Common.ApiModels;
-using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.cs.Queries;
+using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.Queries;
 
 namespace VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.cs;
 

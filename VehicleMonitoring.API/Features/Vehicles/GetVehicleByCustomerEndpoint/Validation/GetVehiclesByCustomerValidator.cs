@@ -1,6 +1,6 @@
 using FastEndpoints;
 using FluentValidation;
-using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.cs.Queries;
+using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.Queries;
 
 namespace VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.cs.Validation;
 
