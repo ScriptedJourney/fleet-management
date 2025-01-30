@@ -1,6 +1,6 @@
 # Fleet Management System
 
-A mocked real-time vehicle monitoring system built with Angular and .NET Core.  
+A mocked real-time vehicle monitoring system built with Angular and .NET.  
 The system displays vehicle statuses, connectivity, and last ping times with automatic updates every minute.
 
 ---
