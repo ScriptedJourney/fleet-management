@@ -27,4 +27,4 @@ public class CustomerRepository : ICustomerRepository
             .Include(c => c.Vehicles)
             .FirstOrDefaultAsync(c => c.Id == id);
     }
-} 
+}
