@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using FastEndpoints.Testing;
 using Microsoft.EntityFrameworkCore;
-using VehicleMonitoring.API;
 using VehicleMonitoring.DataStore.Data;
 using VehicleMonitoring.DataStore.Models;
 
@@ -44,11 +43,11 @@ namespace VehicleMonitoring.IntegrationTests
                 Id = 1,
                 Name = "Olof Carlsson",
                 Address = "Some address 90210",
-                Vehicles = new List<Vehicle>
-                {
+                Vehicles =
+                [
                     new() { Vin = "ABCDEF12345", RegistrationNumber = "ABC 123", LastPing = DateTime.UtcNow },
                     new() { Vin = "IOIEPC89182", RegistrationNumber = "EYD 983", LastPing = DateTime.UtcNow }
-                }
+                ]
             };
 
             context.Customers.Add(customer);

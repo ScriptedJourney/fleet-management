@@ -1,22 +1,21 @@
 using FastEndpoints;
+using FastEndpoints.Swagger;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using VehicleMonitoring.DataStore.Data;
 using VehicleMonitoring.DataStore.Interfaces;
 using VehicleMonitoring.DataStore.Repositories;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using FastEndpoints.Swagger;
-
-namespace VehicleMonitoring.API;
 
 public class Program
 {
     public static void Main(string[] args)
     {
+
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddFastEndpoints()
-            .SwaggerDocument(o => 
+            .SwaggerDocument(o =>
             {
                 o.ShortSchemaNames = true;
                 o.DocumentSettings = s =>
@@ -55,7 +54,7 @@ public class Program
 
         app.UseHttpsRedirection();
 
-        app.UseFastEndpoints(c => 
+        app.UseFastEndpoints(c =>
         {
             c.Serializer.Options.ReferenceHandler = ReferenceHandler.IgnoreCycles;
             c.Serializer.Options.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
