@@ -3,7 +3,7 @@ using MediatR;
 using VehicleMonitoring.API.Features.Common.ApiModels;
 using VehicleMonitoring.API.Features.Vehicles.GetVehicles.Queries;
 
-namespace VehicleMonitoring.API.Features.Vehicles;
+namespace VehicleMonitoring.API.Features.Vehicles.GetVehicles;
 
 public class GetVehiclesEndpoint : EndpointWithoutRequest<List<Vehicle>>
 {
