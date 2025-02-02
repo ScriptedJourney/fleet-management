@@ -5,7 +5,7 @@ using Xunit;
 using Shouldly;
 using VehicleMonitoring.API.Features.Common.ApiModels;
 using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint.Queries;
-using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomerEndpoint;
+using VehicleMonitoring.API.Features.Vehicles.GetVehicleByCustomer;
 
 namespace VehicleMonitoring.IntegrationTests
 {
