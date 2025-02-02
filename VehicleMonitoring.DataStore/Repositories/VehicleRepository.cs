@@ -7,9 +7,9 @@ namespace VehicleMonitoring.DataStore.Repositories;
 
 public class VehicleRepository : IVehicleRepository
 {
-    private readonly VehicleMonitoringContext _context;
+    private readonly VehicleMonitoringDataContext _context;
 
-    public VehicleRepository(VehicleMonitoringContext context)
+    public VehicleRepository(VehicleMonitoringDataContext context)
     {
         _context = context;
     }

@@ -4,13 +4,13 @@ using Microsoft.Extensions.Hosting;
 
 namespace VehicleMonitoring.DataStore.Data;
 
-public class VehicleMonitoringContext : DbContext
+public class VehicleMonitoringDataContext : DbContext
 {
     private readonly bool _isTestEnvironment;
     private readonly IHostEnvironment? _env;
 
-    public VehicleMonitoringContext(
-        DbContextOptions<VehicleMonitoringContext> options,
+    public VehicleMonitoringDataContext(
+        DbContextOptions<VehicleMonitoringDataContext> options,
         IHostEnvironment? env = null)
         : base(options)
     {

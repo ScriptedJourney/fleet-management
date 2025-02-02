@@ -19,24 +19,24 @@ namespace VehicleMonitoring.IntegrationTests
             builder.ConfigureServices(services =>
             {
                 var descriptor = services.SingleOrDefault(
-                    d => d.ServiceType == typeof(DbContextOptions<VehicleMonitoringContext>));
+                    d => d.ServiceType == typeof(DbContextOptions<VehicleMonitoringDataContext>));
 
                 if (descriptor != null)
                 {
                     services.Remove(descriptor);
                 }
 
-                services.AddDbContext<VehicleMonitoringContext>(options =>
+                services.AddDbContext<VehicleMonitoringDataContext>(options =>
                     options.UseInMemoryDatabase("TestDatabase"));
 
                 using var scope = services.BuildServiceProvider().CreateScope();
-                var context = scope.ServiceProvider.GetRequiredService<VehicleMonitoringContext>();
+                var context = scope.ServiceProvider.GetRequiredService<VehicleMonitoringDataContext>();
                 context.Database.EnsureCreated();
                 SeedDatabase(context);
             });
         }
 
-        private static void SeedDatabase(VehicleMonitoringContext context)
+        private static void SeedDatabase(VehicleMonitoringDataContext context)
         {
             var customer = new Customer
             {

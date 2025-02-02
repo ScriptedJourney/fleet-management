@@ -11,7 +11,6 @@ public class Program
 {
     public static void Main(string[] args)
     {
-
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddFastEndpoints()
@@ -33,7 +32,7 @@ public class Program
 
         if (builder.Environment.EnvironmentName != "Testing")
         {
-            builder.Services.AddDbContextPool<VehicleMonitoringContext>(options =>
+            builder.Services.AddDbContextPool<VehicleMonitoringDataContext>(options =>
             {
                 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
@@ -68,7 +67,7 @@ public class Program
 
         using (var scope = app.Services.CreateScope())
         {
-            var context = scope.ServiceProvider.GetRequiredService<VehicleMonitoringContext>();
+            var context = scope.ServiceProvider.GetRequiredService<VehicleMonitoringDataContext>();
             context.Database.EnsureCreated();
         }
 
