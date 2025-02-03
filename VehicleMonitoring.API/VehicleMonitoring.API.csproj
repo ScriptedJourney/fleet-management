@@ -17,10 +17,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Folder Include="Features\Common\" />
-	</ItemGroup>
-
-	<ItemGroup>
 	  <ProjectReference Include="..\VehicleMonitoring.DataStore\VehicleMonitoring.DataStore.csproj" />
 	</ItemGroup>
 
