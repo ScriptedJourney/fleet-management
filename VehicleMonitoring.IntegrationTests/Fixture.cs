@@ -9,11 +9,6 @@ namespace VehicleMonitoring.IntegrationTests
 {
     public class App : AppFixture<Program>
     {
-        protected override ValueTask SetupAsync()
-        {
-            return ValueTask.CompletedTask;
-        }
-
         protected override void ConfigureApp(IWebHostBuilder builder)
         {
             builder.ConfigureServices(services =>
@@ -52,15 +47,6 @@ namespace VehicleMonitoring.IntegrationTests
 
             context.Customers.Add(customer);
             context.SaveChanges();
-        }
-
-        protected override void ConfigureServices(IServiceCollection s)
-        {
-        }
-
-        protected override ValueTask TearDownAsync()
-        {
-            return ValueTask.CompletedTask;
         }
     }
 }
